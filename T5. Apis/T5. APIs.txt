@@ -1,0 +1,24 @@
+T5. APIs
+
+shmget(SHM_KEY, 4096, IPC_CREAT | 0666);
+
+Es para acceder a la memoria compartida,
+Argumentos 
+(segmento de memoria, tamaño del segmento, crea el segmento si no existe y le da permisos)
+
+buff = shmat(shm_id, 0, 0);
+
+mapea el segmento de memoria compartida
+
+( es el identificador del segmento, dirrecion a mapear, flags de control)
+
+mq_open(MQUEUE_NAME, O_CREAT | O_RDONLY, 0666, &attr);
+
+Crea la cola de mensajes
+(Nombre de la cola, crearla si no existe o abrirla, permisos, puntero que define atributos del mensaje)
+
+mq_send(msq, msg_buffer, SIZE, priority);
+
+envia mensaje a la cola
+
+(descriptor de la cola, puntero del mensaje, tamaño del mensaje, prioridad del mensaje)
